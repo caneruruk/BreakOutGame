@@ -38,6 +38,16 @@ public class Rectangle
         center = new Vector3(right - size.x / 2, center.y, center.z);
     }
 
+    public void SetTop(float top)
+    {
+        center = new Vector3(center.x, top - size.y / 2, center.z);
+    }
+
+    public void SetBottom(float bottom)
+    {
+        center = new Vector3(center.x, bottom + size.y / 2, center.z);
+    }
+
     public Vector3 GetCenter()
     {
         return center;
