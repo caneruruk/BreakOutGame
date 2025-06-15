@@ -189,6 +189,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4549672229855350807, guid: 90602b1370e641fe7b0eb77259856809, type: 3}
   m_PrefabInstance: {fileID: 144000518}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &164695865 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5953762586314802807, guid: 90602b1370e641fe7b0eb77259856809, type: 3}
+  m_PrefabInstance: {fileID: 3879011790475796867}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -410,6 +415,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &666584852 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5953762586314802807, guid: 90602b1370e641fe7b0eb77259856809, type: 3}
+  m_PrefabInstance: {fileID: 1445338426}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1432308978
 GameObject:
   m_ObjectHideFlags: 0
@@ -633,6 +643,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5431681004244321852, guid: 84428110011212e868f507620f632f31, type: 3}
+      propertyPath: leftWall
+      value: 
+      objectReference: {fileID: 164695865}
+    - target: {fileID: 5431681004244321852, guid: 84428110011212e868f507620f632f31, type: 3}
+      propertyPath: rightWall
+      value: 
+      objectReference: {fileID: 666584852}
     - target: {fileID: 8211034460130593285, guid: 84428110011212e868f507620f632f31, type: 3}
       propertyPath: m_Name
       value: Rod
