@@ -45,4 +45,9 @@ public class Ball : MonoBehaviour
 
         transform.position = thisRectangle.GetCenter();
     }
+
+    public void SetDirection(Vector3 newDirection)
+    {
+        direction = newDirection;
+    }
 }
