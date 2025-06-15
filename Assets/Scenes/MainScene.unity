@@ -420,6 +420,16 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5953762586314802807, guid: 90602b1370e641fe7b0eb77259856809, type: 3}
   m_PrefabInstance: {fileID: 1445338426}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1044664596 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5953762586314802807, guid: 90602b1370e641fe7b0eb77259856809, type: 3}
+  m_PrefabInstance: {fileID: 2108317910}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1237727606 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5953762586314802807, guid: 90602b1370e641fe7b0eb77259856809, type: 3}
+  m_PrefabInstance: {fileID: 144000518}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1432308978
 GameObject:
   m_ObjectHideFlags: 0
@@ -778,6 +788,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5951960845092550994, guid: 4c7fd8b26348f747bab47e467ccbd604, type: 3}
+      propertyPath: topWall
+      value: 
+      objectReference: {fileID: 1237727606}
+    - target: {fileID: 5951960845092550994, guid: 4c7fd8b26348f747bab47e467ccbd604, type: 3}
+      propertyPath: leftWall
+      value: 
+      objectReference: {fileID: 164695865}
+    - target: {fileID: 5951960845092550994, guid: 4c7fd8b26348f747bab47e467ccbd604, type: 3}
+      propertyPath: rightWall
+      value: 
+      objectReference: {fileID: 666584852}
+    - target: {fileID: 5951960845092550994, guid: 4c7fd8b26348f747bab47e467ccbd604, type: 3}
+      propertyPath: bottomWall
+      value: 
+      objectReference: {fileID: 1044664596}
     - target: {fileID: 7398470432870378491, guid: 4c7fd8b26348f747bab47e467ccbd604, type: 3}
       propertyPath: m_Name
       value: Ball
