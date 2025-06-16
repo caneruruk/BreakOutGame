@@ -1,0 +1,40 @@
+using UnityEngine;
+
+[ExecuteAlways]
+public class Blocks : MonoBehaviour
+{
+    [SerializeField] private GameObject block;
+    [SerializeField] private Vector2 size;
+    [SerializeField] private Vector2 screenSize;
+    [SerializeField] private float gap;
+
+    void Start()
+    {
+        for (int i = transform.childCount - 1; i >= 0; i--)
+        {
+            GameObject child = transform.GetChild(i).gameObject;
+            if (Application.isEditor)
+            {
+                DestroyImmediate(child);
+            }
+            else
+            {
+                Destroy(child);
+            }
+        }
+
+        Vector2 blockSize = new Vector2(screenSize.x / size.x, screenSize.y / size.y);
+        for (int y = 0; y < size.y; y++)
+        {
+            for (int x = 0; x < size.x; x++)
+            {
+                Vector3 position = new Vector3(transform.position.x + -size.x / 2 * blockSize.x + (blockSize.x / 2) + blockSize.x * x, transform.position.y + -size.y / 2 * blockSize.y + (blockSize.y / 2) + blockSize.y * y);
+
+                GameObject newBlock = Instantiate(block);
+                newBlock.transform.localPosition = position;
+                newBlock.transform.localScale = new Vector2(blockSize.x - gap / 2, blockSize.y - gap / 2);
+                newBlock.transform.SetParent(transform);
+            }
+        }
+    }
+}
