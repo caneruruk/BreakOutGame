@@ -22,25 +22,25 @@ public class Ball : MonoBehaviour
         if (thisRectangle.GetTop() > topWallRectangle.GetBottom())
         {
             thisRectangle.SetTop(topWallRectangle.GetBottom());
-            direction.y = -direction.y;
+            SwapDirectionVertically();
         }
 
         if (thisRectangle.GetBottom() < bottomWallRectangle.GetTop())
         {
             thisRectangle.SetBottom(bottomWallRectangle.GetTop());
-            direction.y = -direction.y;
+            SwapDirectionVertically();
         }
 
         if (thisRectangle.GetLeft() < leftWallRectangle.GetRight())
         {
             thisRectangle.SetLeft(leftWallRectangle.GetRight());
-            direction.x = -direction.x;
+            SwapDirectionHorizontally();
         }
 
         if (thisRectangle.GetRight() > rightWallRectangle.GetLeft())
         {
             thisRectangle.SetRight(rightWallRectangle.GetLeft());
-            direction.x = -direction.x;
+            SwapDirectionHorizontally();
         }
 
         transform.position = thisRectangle.GetCenter();
@@ -49,5 +49,20 @@ public class Ball : MonoBehaviour
     public void SetDirection(Vector3 newDirection)
     {
         direction = newDirection;
+    }
+
+    public Vector3 GetDirection()
+    {
+        return direction;
+    }
+
+    public void SwapDirectionHorizontally()
+    {
+        direction.x = -direction.x;
+    }
+
+    public void SwapDirectionVertically()
+    {
+        direction.y = -direction.y;
     }
 }
