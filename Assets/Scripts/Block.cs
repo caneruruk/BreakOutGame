@@ -16,54 +16,54 @@ public class Block : MonoBehaviour
 
         if (ballDirection.isTopLeft())
         {
-            if (ballRectangle.GetCenter().x > thisRectangle.GetLeft() && ballRectangle.GetCenter().x < thisRectangle.GetRight())
-            {
-                ballRectangle.SetTop(thisRectangle.GetBottom());
-                ballScript.SwapDirectionVertically();
-            }
-            else
+            if (ballRectangle.GetCenter().y > thisRectangle.GetBottom() && ballRectangle.GetCenter().y < thisRectangle.GetTop())
             {
                 ballRectangle.SetLeft(thisRectangle.GetRight());
                 ballScript.SwapDirectionHorizontally();
+            }
+            else
+            {
+                ballRectangle.SetTop(thisRectangle.GetBottom());
+                ballScript.SwapDirectionVertically();
             }
         }
         else if (ballDirection.isTopRight())
         {
-            if (ballRectangle.GetCenter().x > thisRectangle.GetLeft() && ballRectangle.GetCenter().x < thisRectangle.GetRight())
+            if (ballRectangle.GetCenter().y > thisRectangle.GetBottom() && ballRectangle.GetCenter().y < thisRectangle.GetTop())
+            {
+                ballRectangle.SetRight(thisRectangle.GetLeft());
+                ballScript.SwapDirectionHorizontally();
+            }
+            else
             {
                 ballRectangle.SetTop(thisRectangle.GetBottom());
                 ballScript.SwapDirectionVertically();
             }
-            else
-            {
-                ballRectangle.SetRight(thisRectangle.GetLeft());
-                ballScript.SwapDirectionHorizontally();
-            }
         }
         else if (ballDirection.isBottomLeft())
         {
-            if (ballRectangle.GetCenter().x > thisRectangle.GetLeft() && ballRectangle.GetCenter().x < thisRectangle.GetRight())
-            {
-                ballRectangle.SetBottom(thisRectangle.GetTop());
-                ballScript.SwapDirectionVertically();
-            }
-            else
+            if (ballRectangle.GetCenter().y > thisRectangle.GetBottom() && ballRectangle.GetCenter().y < thisRectangle.GetTop())
             {
                 ballRectangle.SetLeft(thisRectangle.GetRight());
                 ballScript.SwapDirectionHorizontally();
             }
-        }
-        else if (ballDirection.isBottomRight())
-        {
-            if (ballRectangle.GetCenter().x > thisRectangle.GetLeft() && ballRectangle.GetCenter().x < thisRectangle.GetRight())
+            else
             {
                 ballRectangle.SetBottom(thisRectangle.GetTop());
                 ballScript.SwapDirectionVertically();
             }
-            else
+        }
+        else if (ballDirection.isBottomRight())
+        {
+            if (ballRectangle.GetCenter().y > thisRectangle.GetBottom() && ballRectangle.GetCenter().y < thisRectangle.GetTop())
             {
                 ballRectangle.SetRight(thisRectangle.GetLeft());
                 ballScript.SwapDirectionHorizontally();
+            }
+            else
+            {
+                ballRectangle.SetBottom(thisRectangle.GetTop());
+                ballScript.SwapDirectionVertically();
             }
         }
         else if (ballDirection.isTop())
