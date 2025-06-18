@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 [ExecuteAlways]
 public class Blocks : MonoBehaviour
@@ -7,6 +8,12 @@ public class Blocks : MonoBehaviour
     [SerializeField] private Vector2 size;
     [SerializeField] private Vector2 screenSize;
     [SerializeField] private float gap;
+    [SerializeField] private UnityEvent OnBlockDestroy;
+
+    private void OnBlockDestroyed()
+    {
+        OnBlockDestroy?.Invoke();
+    }
 
     void Start()
     {
@@ -34,6 +41,7 @@ public class Blocks : MonoBehaviour
                 newBlock.transform.localPosition = position;
                 newBlock.transform.localScale = new Vector2(blockSize.x - gap / 2, blockSize.y - gap / 2);
                 newBlock.transform.SetParent(transform);
+                newBlock.GetComponent<Block>().OnDestroy.AddListener(OnBlockDestroyed);
             }
         }
     }
