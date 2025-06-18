@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7047206067867220220}
   - component: {fileID: 7828147645640048265}
   m_Layer: 0
-  m_Name: Block
+  m_Name: Lowest Block
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -175,6 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f5677b67ad67d7b49e43b2ae70bdf91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  points: 1
   OnDestroy:
     m_PersistentCalls:
       m_Calls: []

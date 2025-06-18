@@ -4,15 +4,15 @@ using UnityEngine.Events;
 [ExecuteAlways]
 public class Blocks : MonoBehaviour
 {
-    [SerializeField] private GameObject block;
+    [SerializeField] private GameObject[] blocks;
     [SerializeField] private Vector2 size;
     [SerializeField] private Vector2 screenSize;
     [SerializeField] private float gap;
-    [SerializeField] private UnityEvent OnBlockDestroy;
+    [SerializeField] private UnityEvent<int> OnBlockDestroy;
 
-    private void OnBlockDestroyed()
+    private void OnBlockDestroyed(int points)
     {
-        OnBlockDestroy?.Invoke();
+        OnBlockDestroy?.Invoke(points);
     }
 
     void Start()
@@ -37,12 +37,17 @@ public class Blocks : MonoBehaviour
             {
                 Vector3 position = new Vector3(transform.position.x + -size.x / 2 * blockSize.x + (blockSize.x / 2) + blockSize.x * x, transform.position.y + -size.y / 2 * blockSize.y + (blockSize.y / 2) + blockSize.y * y);
 
-                GameObject newBlock = Instantiate(block);
+                GameObject newBlock = Instantiate(BlockToInstantiate(y));
                 newBlock.transform.localPosition = position;
                 newBlock.transform.localScale = new Vector2(blockSize.x - gap / 2, blockSize.y - gap / 2);
                 newBlock.transform.SetParent(transform);
                 newBlock.GetComponent<Block>().OnDestroy.AddListener(OnBlockDestroyed);
             }
         }
+    }
+
+    private GameObject BlockToInstantiate(int y)
+    {
+        return blocks[(int)(y / (size.y / blocks.Length))];
     }
 }

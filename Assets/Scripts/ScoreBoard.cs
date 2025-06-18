@@ -6,9 +6,9 @@ public class ScoreBoard : MonoBehaviour
     private TextMeshProUGUI text;
     private int score;
 
-    public void IncrementScore()
+    public void IncrementScore(int points)
     {
-        score++;
+        score += points;
     }
 
     void Start()
