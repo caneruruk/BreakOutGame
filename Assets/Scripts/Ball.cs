@@ -9,6 +9,7 @@ public class Ball : MonoBehaviour
 
     void Start()
     {
+        Reset();
         rigidbody2D.linearVelocity = direction.normalized * pace;
     }
 
@@ -35,6 +36,7 @@ public class Ball : MonoBehaviour
 
     public void Reset()
     {
-        rigidbody2D.MovePosition(new Vector2(0, -1));
+        rigidbody2D.MovePosition(new Vector2(Random.Range(-3.5f, 3.5f), -1));
+        SetDirection(new Vector3(1, -1));
     }
 }
