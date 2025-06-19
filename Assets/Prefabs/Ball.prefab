@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1656513287422796062}
   - component: {fileID: 7894414882493710651}
-  - component: {fileID: 5951960845092550994}
   - component: {fileID: 7412895192304112199}
   - component: {fileID: 804442741197120741}
+  - component: {fileID: 5951960845092550994}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Ball
@@ -90,20 +90,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5951960845092550994
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7398470432870378491}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 209579d5e47d714478f59cb3e2d54fcf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  direction: {x: 1, y: -1, z: 0}
-  pace: 5
 --- !u!50 &7412895192304112199
 Rigidbody2D:
   serializedVersion: 5
@@ -167,3 +153,17 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
+--- !u!114 &5951960845092550994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7398470432870378491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 209579d5e47d714478f59cb3e2d54fcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  direction: {x: 1, y: -1, z: 0}
+  pace: 5

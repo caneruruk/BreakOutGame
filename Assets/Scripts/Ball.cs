@@ -1,14 +1,14 @@
+using UnityEditor.Callbacks;
 using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
     [SerializeField] private Vector3 direction;
     [SerializeField] private float pace;
-    private new Rigidbody2D rigidbody2D;
+    [SerializeField] private new Rigidbody2D rigidbody2D;
 
     void Start()
     {
-        rigidbody2D = GetComponent<Rigidbody2D>();
         rigidbody2D.linearVelocity = direction.normalized * pace;
     }
 
@@ -31,5 +31,10 @@ public class Ball : MonoBehaviour
     public void SwapDirectionVertically()
     {
         direction.y = -direction.y;
+    }
+
+    public void Reset()
+    {
+        rigidbody2D.MovePosition(new Vector2(0, -1));
     }
 }
