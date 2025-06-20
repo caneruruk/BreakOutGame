@@ -5,11 +5,13 @@ public class Ball : MonoBehaviour
 {
     [SerializeField] private Vector3 direction;
     [SerializeField] private float pace;
-    [SerializeField] private new Rigidbody2D rigidbody2D;
+    private new Rigidbody2D rigidbody2D;
 
-    void Start()
+    void Awake()
     {
-        Reset();
+        rigidbody2D = GetComponent<Rigidbody2D>();
+        rigidbody2D.MovePosition(new Vector2(Random.Range(-3.5f, 3.5f), -1));
+        SetDirection(new Vector3(1, -1));
         rigidbody2D.linearVelocity = direction.normalized * pace;
     }
 
@@ -32,11 +34,5 @@ public class Ball : MonoBehaviour
     public void SwapDirectionVertically()
     {
         direction.y = -direction.y;
-    }
-
-    public void Reset()
-    {
-        rigidbody2D.MovePosition(new Vector2(Random.Range(-3.5f, 3.5f), -1));
-        SetDirection(new Vector3(1, -1));
     }
 }
