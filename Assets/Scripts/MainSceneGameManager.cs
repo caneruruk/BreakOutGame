@@ -12,5 +12,10 @@ public class MainSceneGameManager : MonoBehaviour
         {
             SceneManager.LoadScene(gameSceneName);
         }
+
+        if (Keyboard.current.escapeKey.wasReleasedThisFrame)
+        {
+            Application.Quit();
+        }
     }
 }
