@@ -4,7 +4,9 @@ using UnityEngine.Events;
 public class Block : MonoBehaviour
 {
     [SerializeField] private int points;
-    public UnityEvent<int> OnDestroy;
+    [SerializeField] private float increaseSpeed;
+    [SerializeField] private float decreaseWidth;
+    public UnityEvent<int, float, float> OnDestroy;
 
     void OnCollisionEnter2D(Collision2D collision2D)
     {
@@ -13,7 +15,7 @@ public class Block : MonoBehaviour
             return;
         }
 
-        OnDestroy?.Invoke(points);
+        OnDestroy?.Invoke(points, increaseSpeed, decreaseWidth);
         Destroy(gameObject);
     }
 }

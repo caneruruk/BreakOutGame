@@ -7,6 +7,16 @@ public class Rod : MonoBehaviour
     [SerializeField] private GameObject leftWall;
     [SerializeField] private GameObject rightWall;
     [SerializeField] private float ballDirectionMultiplier = 1;
+    private float startingWidth;
+
+    public void DecreaseWidth(int points, float increaseSpeed, float decreaseWidth)
+    {
+        float newWidth = startingWidth * decreaseWidth;
+        if (newWidth < transform.lossyScale.x)
+        {
+            transform.localScale = new Vector3(newWidth, transform.lossyScale.y, transform.lossyScale.z);
+        }
+    }
 
     void OnTriggerEnter2D(Collider2D collider2D)
     {
@@ -30,6 +40,8 @@ public class Rod : MonoBehaviour
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+
+        startingWidth = transform.lossyScale.x;
     }
 
     void Update()

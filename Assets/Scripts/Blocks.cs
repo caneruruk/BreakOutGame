@@ -8,11 +8,11 @@ public class Blocks : MonoBehaviour
     [SerializeField] private Vector2 size;
     [SerializeField] private Vector2 screenSize;
     [SerializeField] private float gap;
-    [SerializeField] private UnityEvent<int> OnBlockDestroy;
+    [SerializeField] public UnityEvent<int, float, float> OnBlockDestroy;
 
-    private void OnBlockDestroyed(int points)
+    private void OnBlockDestroyed(int points, float increaseSpeed, float decreaseWidth)
     {
-        OnBlockDestroy?.Invoke(points);
+        OnBlockDestroy?.Invoke(points, increaseSpeed, decreaseWidth);
     }
 
     void Start()

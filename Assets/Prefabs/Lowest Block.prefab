@@ -176,6 +176,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points: 1
+  increaseSpeed: 1
+  decreaseWidth: 1
   OnDestroy:
     m_PersistentCalls:
       m_Calls: []
