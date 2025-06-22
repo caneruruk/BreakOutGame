@@ -1,25 +1,11 @@
 using UnityEngine;
-using UnityEngine.Events;
 
-[ExecuteAlways]
-public class Blocks : MonoBehaviour
+public class MainSceneBlocks : MonoBehaviour
 {
     [SerializeField] private GameObject[] blocks;
     [SerializeField] private Vector2 size;
     [SerializeField] private Vector2 screenSize;
     [SerializeField] private float gap;
-    [SerializeField] public UnityEvent<int, float, float> OnBlockDestroy;
-    [SerializeField] private UnityEvent OnEmpty;
-
-    private void OnBlockDestroyed(int points, float increaseSpeed, float decreaseWidth)
-    {
-        OnBlockDestroy?.Invoke(points, increaseSpeed, decreaseWidth);
-
-        if (transform.childCount == 0)
-        {
-            OnEmpty?.Invoke();
-        }
-    }
 
     void Start()
     {
@@ -47,7 +33,6 @@ public class Blocks : MonoBehaviour
                 newBlock.transform.localPosition = position;
                 newBlock.transform.localScale = new Vector2(blockSize.x - gap / 2, blockSize.y - gap / 2);
                 newBlock.transform.SetParent(transform);
-                newBlock.GetComponent<Block>().OnDestroy.AddListener(OnBlockDestroyed);
             }
         }
     }

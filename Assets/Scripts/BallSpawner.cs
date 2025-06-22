@@ -7,8 +7,14 @@ public class BallSpawner : MonoBehaviour
 
     public void Spawn()
     {
+        Debug.Log("Hello");
         GameObject ball = Instantiate(ballGameObject, new Vector3(0, -1), Quaternion.identity);
         blocks.GetComponent<Blocks>().OnBlockDestroy.AddListener(ball.GetComponent<Ball>().IncreaseSpeed);
         Destroy(gameObject);
+    }
+
+    public void SetBlocks(GameObject blocks)
+    {
+        this.blocks = blocks;
     }
 }

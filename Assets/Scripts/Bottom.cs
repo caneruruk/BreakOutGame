@@ -7,6 +7,7 @@ public class Bottom : MonoBehaviour
     [SerializeField] private UnityEvent OnBallInBottom;
     [SerializeField] private GameObject timerGameObject;
     [SerializeField] private GameObject ballSpawnerGameObject;
+    [SerializeField] private GameObject blocks;
 
     void OnTriggerEnter2D(Collider2D collider2D)
     {
@@ -19,6 +20,7 @@ public class Bottom : MonoBehaviour
         Destroy(collider2D.gameObject);
         GameObject timer = Instantiate(timerGameObject);
         GameObject ballSpawner = Instantiate(ballSpawnerGameObject);
+        ballSpawner.GetComponent<BallSpawner>().SetBlocks(blocks);
         timer.GetComponent<Timer>().AddListener(ballSpawner.GetComponent<BallSpawner>().Spawn);
     }
 }
