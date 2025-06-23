@@ -10,13 +10,19 @@ public class Blocks : MonoBehaviour
     [SerializeField] private float gap;
     [SerializeField] public UnityEvent<int, float, float> OnBlockDestroy;
     [SerializeField] private UnityEvent OnEmpty;
+    [SerializeField] private AudioClip scoreAudio;
+    [SerializeField] private AudioClip finishedSound;
 
     private void OnBlockDestroyed(int points, float increaseSpeed, float decreaseWidth)
     {
+        AudioSource.PlayClipAtPoint(scoreAudio, transform.position);
+
         OnBlockDestroy?.Invoke(points, increaseSpeed, decreaseWidth);
 
         if (transform.childCount == 0)
         {
+            AudioSource.PlayClipAtPoint(finishedSound, Vector2.zero);
+
             OnEmpty?.Invoke();
         }
     }

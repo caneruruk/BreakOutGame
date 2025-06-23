@@ -8,6 +8,7 @@ public class Rod : MonoBehaviour
     [SerializeField] private GameObject rightWall;
     [SerializeField] private float ballDirectionMultiplier = 1;
     private float startingWidth;
+    [SerializeField] private AudioClip knockingSound;
 
     public void DecreaseWidth(int points, float increaseSpeed, float decreaseWidth)
     {
@@ -24,6 +25,8 @@ public class Rod : MonoBehaviour
         {
             return;
         }
+
+        AudioSource.PlayClipAtPoint(knockingSound, collider2D.transform.position);
 
         Vector3 newDirection = new Vector3((collider2D.gameObject.transform.position.x - transform.position.x) / (transform.lossyScale.x / 2) * ballDirectionMultiplier, 1, 0);
         collider2D.gameObject.GetComponent<Ball>().SetDirection(newDirection);

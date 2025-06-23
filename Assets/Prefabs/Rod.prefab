@@ -105,6 +105,7 @@ MonoBehaviour:
   leftWall: {fileID: 0}
   rightWall: {fileID: 0}
   ballDirectionMultiplier: 1
+  knockingSound: {fileID: 8300000, guid: 047e922c6dd6d5505aee4cf7e71f6786, type: 3}
 --- !u!50 &4553899272163206038
 Rigidbody2D:
   serializedVersion: 5

@@ -8,6 +8,7 @@ public class Bottom : MonoBehaviour
     [SerializeField] private GameObject timerGameObject;
     [SerializeField] private GameObject ballSpawnerGameObject;
     [SerializeField] private GameObject blocks;
+    [SerializeField] private AudioClip dieSound;
 
     void OnTriggerEnter2D(Collider2D collider2D)
     {
@@ -15,6 +16,8 @@ public class Bottom : MonoBehaviour
         {
             return;
         }
+
+        AudioSource.PlayClipAtPoint(dieSound, collider2D.transform.position);
 
         OnBallInBottom?.Invoke();
         Destroy(collider2D.gameObject);
